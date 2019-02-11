@@ -1,0 +1,70 @@
+<html>
+    <style>
+        body {
+            background: #000;
+        }
+
+        canvas {
+            border: 1px solid #fff;
+            float: left;
+        }
+
+        .mondriaan {
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+
+    <body>
+        <canvas width="500" height="500"></canvas>
+        <img src="/assets/mondriaan.jpg" class="mondriaan" />
+
+        <script>
+            const ctx = document.querySelector('canvas').getContext('2d');
+
+            ctx.fillStyle = '#fff';
+            ctx.rect(0,0,500,500);
+            ctx.fill();
+
+            ctx.fillStyle = 'red';
+            ctx.beginPath();
+            ctx.rect(180,0,320,320);
+            ctx.fill();
+
+            ctx.fillStyle = 'blue';
+            ctx.beginPath();
+            ctx.rect(0,320,180,180);
+            ctx.fill();
+
+            ctx.fillStyle = 'yellow';
+            ctx.beginPath();
+            ctx.rect(450,400,50,100);
+            ctx.fill();
+            
+            ctx.fillStyle = '#000';
+            ctx.beginPath();
+            ctx.rect(450,320,50,80);
+            ctx.fill();
+
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 10;
+
+            ctx.beginPath();
+
+            // draw vertical line
+            ctx.moveTo(180,0);
+            ctx.lineTo(180,500);
+            
+            ctx.moveTo(0,160);
+            ctx.lineTo(180, 160);
+
+            ctx.moveTo(0,320);
+            ctx.lineTo(500, 320);
+
+            ctx.moveTo(450,320);
+            ctx.lineTo(450, 500);
+
+            ctx.stroke();
+        </script>
+    </body>
+</html>
